@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+<div style="background-color: azure; border-color: black;border-top: 5px" >
+<body>
+ 
+     <h1 style="text-align: center;color: rosybrown">Welcome to my web app</h1> 
+	<h4 style="text-align: center;color: rosybrown">Predict Salary Analysis</h4>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <div class="form_design"> 
+    <form style="text-align: center" action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="experience" placeholder="Experience" required="required" />
+        <br><br>
+        <div style="line-height: 0px">
+        <input type="text" name="test_score" placeholder="Test Score" required="required" />
+        <p style="font-size: 12px;margin-right: 70px">enter score out of 10</p>
+        </div>
+        <div style="line-height: 5px"></div>
+        <div style="line-height: 0px">
+		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+        <p style="font-size: 12px;margin-right: 70px">enter score out of 10</p>
+        </div>
+        <div style="line-height: 25px"></div>
+        <button style="background-color: dodgerblue;border-radius: 4px 4px 4px 4px" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+     </div>    
+           
+   <br>
+
+    <div style="text-align: center">
+   {{ prediction_text }}
+    </div>
+
+   
+
+</body>
+    </div>    
+</html>
